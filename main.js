@@ -5,25 +5,35 @@ const mobileMenu = document.querySelector(".mobile-menu");
 const shoppingCartIcon = document.querySelector(".navbar-shopping-cart");
 const shoppingCartContainer = document.querySelector("#shoppingCartContainer");
 const cardsContainer = document.querySelector(".cards-container");
+const productDetailAside = document.querySelector("#productDetail");
+const productDetailCloseIcon = document.querySelector(".product-detail-close");
+const productDetaiIImg = document.querySelector("#productDetail>img");
 
 emailNav.addEventListener("click", toggleDesktopMenu);
 hamMenuIcon.addEventListener("click", toggleMobileMenu);
 shoppingCartIcon.addEventListener("click", toggleCarritoAside);
+productDetailCloseIcon.addEventListener("click", closeProductDetailAside);
 
 function toggleDesktopMenu() {
-  const isshoppingCartContainerClosed =
+  const isShoppingCartContainerClosed =
     shoppingCartContainer.classList.contains("inactive");
-  if (!isshoppingCartContainerClosed) {
+
+  if (!isShoppingCartContainerClosed) {
     shoppingCartContainer.classList.add("inactive");
   }
+
+  closeProductDetailAside();
+
   desktopMenu.classList.toggle("inactive");
 }
+
 function toggleMobileMenu() {
-  const isshoppingCartContainerClosed =
+  const isShoppingCartContainerClosed =
     shoppingCartContainer.classList.contains("inactive");
-  if (!isshoppingCartContainerClosed) {
+  if (!isShoppingCartContainerClosed) {
     shoppingCartContainer.classList.add("inactive");
   }
+  closeProductDetailAside();
   mobileMenu.classList.toggle("inactive");
 }
 function toggleCarritoAside() {
@@ -36,7 +46,21 @@ function toggleCarritoAside() {
   if (!isDesktopMenuClosed) {
     desktopMenu.classList.add("inactive");
   }
+
+  closeProductDetailAside();
+
   shoppingCartContainer.classList.toggle("inactive");
+}
+function closeProductDetailAside() {
+  productDetailAside.classList.add("inactive");
+}
+function openProductDetailAside() {
+  // Es lo mismo que en las demas funciones pero sin condicional, se pudo notar que en caso de que la clase 'inactive' se agregue dos veces, esta no se repetira ni afectara el funcionameinto de la funcion
+  cardsContainer.sty;
+  desktopMenu.classList.add("inactive");
+  mobileMenu.classList.add("inactive");
+  shoppingCartContainer.classList.add("inactive");
+  productDetailAside.classList.remove("inactive");
 }
 
 const productsList = [];
@@ -84,6 +108,7 @@ function renderProducts(array) {
 
     const productImg = document.createElement("img");
     productImg.setAttribute("src", product.image);
+    productImg.addEventListener("click", openProductDetailAside);
 
     const productInfo = document.createElement("div");
     productInfo.classList.add("product-info");

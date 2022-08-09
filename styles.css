@@ -1,5 +1,4 @@
 /*General*/
-
 :root {
   --white: #ffffff;
   --black: #000000;
@@ -10,7 +9,6 @@
   --md: 16px;
   --lg: 18px;
 }
-
 body {
   margin: 0;
   font-family: "Quicksand", sans-serif;
@@ -23,16 +21,13 @@ nav {
   padding: 0 24px;
   border-bottom: 1px solid var(--very-light-pink);
 }
-
 .menu {
   display: none;
   cursor: pointer;
 }
-
 .logo {
   width: 100px;
 }
-
 .navbar-left ul,
 .navbar-right ul {
   list-style: none;
@@ -271,6 +266,7 @@ aside {
   height: 240px;
   border-radius: 20px;
   object-fit: cover;
+  cursor: pointer;
 }
 .cards-container .product-info {
   display: flex;
@@ -303,7 +299,6 @@ aside {
   width: 360px;
   padding-bottom: 24px;
   position: absolute;
-  right: 0;
 }
 
 .product-detail-close {
@@ -377,7 +372,7 @@ aside {
   .menu {
     display: block;
   }
-  .productDetail {
+  #productDetail {
     width: 100%;
   }
   .navbar-left ul,
@@ -404,7 +399,6 @@ aside {
     width: 100%;
   }
 }
-
 @media (min-width: 641px) {
   .mobile-menu {
     display: none;
