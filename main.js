@@ -1,3 +1,4 @@
+//Declarando los selectores de los elemntos HTML
 const emailNav = document.querySelector(".navbar-email");
 const desktopMenu = document.querySelector(".desktop-menu");
 const hamMenuIcon = document.querySelector(".menu");
@@ -8,6 +9,8 @@ const cardsContainer = document.querySelector(".cards-container");
 const productDetailAside = document.querySelector("#productDetail");
 const productDetailCloseIcon = document.querySelector(".product-detail-close");
 const productDetaiIImg = document.querySelector("#productDetail>img");
+
+const style = document.styleSheets[1];
 
 emailNav.addEventListener("click", toggleDesktopMenu);
 hamMenuIcon.addEventListener("click", toggleMobileMenu);
@@ -54,9 +57,12 @@ function toggleCarritoAside() {
 function closeProductDetailAside() {
   productDetailAside.classList.add("inactive");
 }
+
 function openProductDetailAside() {
   // Es lo mismo que en las demas funciones pero sin condicional, se pudo notar que en caso de que la clase 'inactive' se agregue dos veces, esta no se repetira ni afectara el funcionameinto de la funcion
-  cardsContainer.sty;
+
+  style.cssRules[3].style.backgroundColor = "blue";
+
   desktopMenu.classList.add("inactive");
   mobileMenu.classList.add("inactive");
   shoppingCartContainer.classList.add("inactive");

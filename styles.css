@@ -176,11 +176,11 @@ aside {
   box-sizing: border-box;
   border-radius: 0 0 8px 8px;
   position: absolute;
-  right: 0;
   background-color: var(--white);
 }
 #shoppingCartContainer {
   padding: 0 24px 24px;
+  right: 0;
 }
 .title-container {
   display: flex;
@@ -295,10 +295,13 @@ aside {
 }
 
 /* Product Detail */
+.main-container {
+  display: grid;
+}
 #productDetail {
-  width: 360px;
+  top: 60px;
   padding-bottom: 24px;
-  position: absolute;
+  place-self: center;
 }
 
 .product-detail-close {
